@@ -40,10 +40,9 @@ public class HistogramDisplay extends ApplicationFrame {
     
     private DefaultCategoryDataset createDataset(){
         DefaultCategoryDataset dataset= new DefaultCategoryDataset();
-        dataset.addValue(3, "", "ulpgc.es");
-        dataset.addValue(5, "", "alu.ulpgc.es");
-        dataset.addValue(9, "", "hotmail.com");
-        dataset.addValue(15, "", "gmail.com");
+        for (String key : histogram.keySet()) {
+            dataset.addValue(histogram.get(key),"",key);
+        }
         return dataset;
     }
     
